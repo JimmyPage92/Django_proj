@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome user page</title>
+</head>
+<body>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ welcome_form }}
+    <input type="submit" value="Send user name!">
+</form>
+
+<h2> {{ user_name }} </h2>
+
+</body>
+</html>
