@@ -13,7 +13,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
 
-            return HttpResponse(f'wlasnie zalozyles konto dla uzytkownika o nazwie {username}')
+            return HttpResponse(f'Account for {username} has been created')
     else:
         form = UserRegistration()
 
