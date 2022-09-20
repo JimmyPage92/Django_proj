@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registration page</title>
-</head>
-<body>
 {% load crispy_forms_tags %}
-<h3> Join to Us!!!</h3>
-<h4>Wpisz swoje dane</h4>
+{% block content %}
+<h3> Join to Us!!! </h3>
+<h4>Wpisz swoje dane aby zalozyc konto</h4>
 <form action="" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" value="Sign in">
+    <input type="submit" value="Sign Up">
 </form>
-<h2> {{ username }} </h2>
-</body>
-</html>
+<h4>Masz juz u nas konto?</h4>
+<a class="ml-2" href="{% url 'login' %}">Sign In</a>
+{% endblock %}

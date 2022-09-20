@@ -1,0 +1,13 @@
+
+{% load crispy_forms_tags %}
+{% block content %}
+<h3> Zaloguj sie :)</h3>
+<h4>Wpisz poprawne dane aby zalogowac sie do swojego konta</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Sign Up">
+</form>
+<h4>Nie masz jeszcze u nas konta? Kliknij w register i zaloz swoje konto :)</h4>
+<a class="ml-2" href="{% url 'register' %}">Register</a>
+{% endblock %}
