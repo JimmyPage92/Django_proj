@@ -2,9 +2,9 @@
 {% block content %}
 <h1>Home page :) Witam na stronie startowej naszego bloga</h1>
 {% for post in posts %}
-<h3>{{ post.author }}</h3>
-<p>{{ post.title }}</p>
-<p>{{ post.content }}</p>
-<p>{{ post.data_posted }}</p>
+<img src="{{ post.author.profile.image.url }}" />
+<h3>Tytul artykulu to: {{ post.title }} - opublikowano go: {{ post.data_posted }}</h3>
+<p>Jego autorem jest: {{ post.author }}</p>
+<p>Jego tresc to: {{ post.content }}</p>
 {% endfor %}
 {% endblock %}

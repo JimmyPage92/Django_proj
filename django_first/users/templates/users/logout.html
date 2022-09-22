@@ -1,6 +1,7 @@
-
 {% load crispy_forms_tags %}
 {% block content %}
-<h4>Poprawnie wylogowales sie ze swojego konta</h4>
+<h4>poprawnie wylogowales sie ze swojego konta</h4>
 <a class="ml-2" href="{% url 'login' %}">Log In Again?</a>
+<h4>or</h4>
+<a class="ml-2" href="{% url 'register' %}">Create new account</a>
 {% endblock %}
