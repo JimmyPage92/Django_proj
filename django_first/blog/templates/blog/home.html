@@ -3,8 +3,9 @@
 <h1>Home page :) Witam na stronie startowej naszego bloga</h1>
 {% for post in posts %}
 <img src="{{ post.author.profile.image.url }}" />
-<h3>Tytul artykulu to: {{ post.title }} - opublikowano go: {{ post.data_posted }}</h3>
-<p>Jego autorem jest: {{ post.author }}</p>
+<a class="mr-2" href="#">{{ post.author }}</a>
+<h4>Opublikowano go: {{ post.data_posted }}</h4>
+<h2><a class="article-title" href="{% url 'article-detail' post.id %}">{{ post.title }}</a></h2>
 <p>Jego tresc to: {{ post.content }}</p>
 {% endfor %}
 {% endblock %}
