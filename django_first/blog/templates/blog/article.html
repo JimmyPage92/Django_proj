@@ -1,8 +1,12 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 <img src="{{ object.author.profile.image.url }}" />
-<a class="mr-2" href="#">{{ object.author }}</a>
+<h4>autor artykulu to: <a class="mr-2" href="#">{{ object.author }}</a></h4>
 <small class="text-muted">{{ object.data_posted }}</small>
-<h2><a class="article-title" href="register/">{{ object.title }}</a></h2>
-<p class="article-content">{{ object.content }}</p>
+<h2>Tytul:<a class="article-title" href="register/">{{ object.title }}</a></h2>
+<h4>Tresc tego artykulu to: <p class="article-content">{{ object.content }}</p></h4>
+{% if object.author == user %}
+    <a class="nav-item nav link" href="{% url 'article-update' object.id %}">Update article</a>
+    <a class="nav-item nav link" href="{% url 'article-delete' object.id %}">Delete article</a>
+{% endif %}
 {% endblock %}
