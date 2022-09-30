@@ -2,7 +2,7 @@
 {% block content %}
 <img src="{{ object.author.profile.image.url }}" />
 <a class="mr-2" href="#">{{ object.author }}</a>
-<small class="text-muted"> {{ object.data_posted }}</small>
+<small class="text-muted">{{ object.data_posted }}</small>
 <h2><a class="article-title" href="register/">{{ object.title }}</a></h2>
 <p class="article-content">{{ object.content }}</p>
 {% endblock %}
