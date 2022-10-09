@@ -18,12 +18,13 @@ class ArticleListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-data_posted']
+    paginate_by = 4 #atrybut
 
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'blog/article.html'
 
-class ArticleCreateView(LoginRequiredMixin,CreateView): #przypisywać utworzony artykuł doaktualnie zalogowanego użytkownika: form.instance.author =self.request.user
+class ArticleCreateView(LoginRequiredMixin, CreateView): #przypisywać utworzony artykuł doaktualnie zalogowanego użytkownika: form.instance.author =self.request.user
     model = Article
     template_name = 'blog/article_form.html'
     fields = ['title', 'content']
