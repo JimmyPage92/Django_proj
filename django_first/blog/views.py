@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Article
-from django.views.generic.list import ListView #wszystkie artykuly z bloga lista wyświetlanych artykułów na blogu
+from django.views.generic.list import ListView #wszystkie artykuly z bloga-lista wyświetlanych artykułów na blogu
 from django.views.generic.detail import DetailView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
@@ -23,7 +23,7 @@ class ArticleDetailView(DetailView):
     model = Article
     template_name = 'blog/article.html'
 
-class ArticleCreateView(LoginRequiredMixin,CreateView): # przypisywać utworzony artykuł doaktualnie zalogowanego użytkownika: form.instance.author =self.request.user
+class ArticleCreateView(LoginRequiredMixin,CreateView): #przypisywać utworzony artykuł doaktualnie zalogowanego użytkownika: form.instance.author =self.request.user
     model = Article
     template_name = 'blog/article_form.html'
     fields = ['title', 'content']
@@ -46,7 +46,7 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         article = self.get_object()
         return self.request.user == article.author
 
-class ArticleDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = 'blog/delete_confirm.html'
     success_url = '/'
